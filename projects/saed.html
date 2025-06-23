@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SAED</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body class="bg-gray-800">
+
+  <!-- Image Gallery -->
+  <div class="flex justify-center w-full p-6 bg-gray-900">
+    <div class="relative w-full max-w-screen-xl mx-auto overflow-hidden">
+      <div id="slider" class="flex transition-transform duration-700">
+        <img src="../image/sed1.png" class="w-full flex-shrink-0 object-cover max-w-full max-h-[800px] md:max-h-[600px] lg:max-h-[500px] xl:max-h-[1080px]" style="aspect-ratio:16/9;" alt="Image 1">
+        <img src="../image/sed222.png" class="w-full flex-shrink-0 object-cover max-w-full max-h-[800px] md:max-h-[600px] lg:max-h-[500px] xl:max-h-[1080px]" style="aspect-ratio:16/9;" alt="Image 2">
+        <img src="../image/sed33.png" class="w-full flex-shrink-0 object-cover max-w-full max-h-[800px] md:max-h-[600px] lg:max-h-[500px] xl:max-h-[1080px]" style="aspect-ratio:16/9;" alt="Image 2">
+      </div>
+      <!-- Left Button -->
+      <button id="prevBtn" class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white-80 hover:bg-gray-100 p-2 rounded-full shadow-md z-10">
+        &#8592;
+      </button>
+      <!-- Right Button -->
+      <button id="nextBtn" class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white-80 hover:bg-gray-100 p-2 rounded-full shadow-md z-10">
+        &#8594;
+      </button>
+    </div>
+  </div>
+
+  <!-- Text Content -->
+  <div class="bg-white text-gray-800 p-6 sm:p-8 rounded-b-lg shadow-md max-w-5xl mx-auto mt-4">
+    <h3 class="text-2xl font-bold mb-4">SAED (System Analytics and Evaluation Development)</h3>
+    <p class="mb-4">
+        Is a personal JAVA project for TESDA developed to manage and monitor fruit inventory efficiently. The system is designed to handle the basic inventory tasks such as recording terms, tracking incoming fruit supplies, managing pricing, and monitoring quantities.
+    </p>
+    <p class="mb-4">
+      <strong>Technologies used:</strong> PHP, HTML, Tailwind CSS, JavaScript, Mysql 
+    </p>
+    <p class="mb-4">
+      <strong>Users:</strong><br>
+      <strong>Purchase Request & Order Management :</strong>Allows administrators to record, update, and track supply requests made by different departments as it monitored for creations that tied to approved PRs.<br>
+      <strong>Inventory Monitoring:</strong> Keeps track of item quantity, item history, and supply flow in and out of the system.<br>
+      <strong>Admin-Only Access:</strong> Designed specifically for internal use by authorized personnel handling supply operations.
+    </p>
+    <p>
+        SAED is built with simplicity, efficiency, and usability in mind. Tailored for administrative use, it empowers internal staff to handle supply processes accurately and efficiently without relying on complex third-party platforms.
+    </p>
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+    const slides = slider.querySelectorAll('img');
+    const totalSlides = slides.length;
+    let index = 0;
+  
+    const updateSlide = () => {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    };
+  
+    const nextSlide = () => {
+      index = (index + 1) % totalSlides;
+      updateSlide();
+    };
+  
+    const prevSlide = () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    };
+  
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+  
+    // Auto-slide every 3 seconds
+    setInterval(nextSlide, 20000);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suroy-Ta! Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body class="bg-gray-800">
+
+  <!-- Image Gallery -->
+  <div class="flex justify-center w-full p-6 bg-gray-900">
+    <div class="relative w-full max-w-screen-xl mx-auto overflow-hidden">
+      <div id="slider" class="flex transition-transform duration-700">
+        <img src="../image/11.png" class="w-full flex-shrink-0 object-cover max-w-full max-h-[800px] md:max-h-[600px] lg:max-h-[500px] xl:max-h-[1080px]" style="aspect-ratio:16/9;" alt="Image 1">
+        <img src="../image/14.png" class="w-full flex-shrink-0 object-cover max-w-full max-h-[800px] md:max-h-[600px] lg:max-h-[500px] xl:max-h-[1080px]" style="aspect-ratio:16/9;" alt="Image 2">
+        <img src="../image/13.png" class="w-full flex-shrink-0 object-cover max-w-full max-h-[800px] md:max-h-[600px] lg:max-h-[500px] xl:max-h-[1080px]" style="aspect-ratio:16/9;" alt="Image 3">
+      </div>
+      <!-- Left Button -->
+      <button id="prevBtn" class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white-80 hover:bg-gray-100 p-2 rounded-full shadow-md z-10">
+        &#8592;
+      </button>
+      <!-- Right Button -->
+      <button id="nextBtn" class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white-80 hover:bg-gray-100 p-2 rounded-full shadow-md z-10">
+        &#8594;
+      </button>
+    </div>
+  </div>
+
+  <!-- Text Content -->
+  <div class="bg-white text-gray-800 p-6 sm:p-8 rounded-b-lg shadow-md max-w-5xl mx-auto mt-4">
+    <h3 class="text-2xl font-bold mb-4">Suroy-Ta! Travel Blog Capstone Project</h3>
+    <p class="mb-4">
+        Suroy-Ta! is a travel blog focused on posting and sharing content about Cebu's hidden gems and well-known tourist destinations. The main goal of the website is to promote Cebu as a travel destination by allowing users to share their experiences and explore new places.
+    </p>
+    <p class="mb-4">
+      <strong>Technologies used:</strong> Vue.js for the front-end, Tailwind CSS for styling, Node.js for the back-end, and MySQL for the database.
+    </p>
+    <p class="mb-4">
+      The platform allows users to share experiences and explore places in Cebu, promoting both famous destinations and hidden gems.
+    </p>
+    <p class="mb-4">
+      <strong>Users:</strong><br>
+      <strong>Customer:</strong> Can post travel experiences, update profiles, like/comment, and report posts.<br>
+      <strong>Promoter:</strong> Verified users who promote businesses or spots through posts.<br>
+      <strong>Guest:</strong> Can browse content and maps but cannot interact deeply.
+    </p>
+    <p>
+        Overall, Suroy-Ta! aims to be a helpful and engaging platform for travelers, local businesses, and tourism enthusiasts. By connecting people through shared travel stories and verified promotional posts, the website not only promotes Cebu's famous spots but also uncovers its hidden gems. Whether you're exploring for fun, sharing your adventures, or showcasing your business, Suroy-Ta! creates a space where the beauty of Cebu can be experienced and appreciated by everyone.
+    </p>
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+    const slides = slider.querySelectorAll('img');
+    const totalSlides = slides.length;
+    let index = 0;
+  
+    const updateSlide = () => {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    };
+  
+    const nextSlide = () => {
+      index = (index + 1) % totalSlides;
+      updateSlide();
+    };
+  
+    const prevSlide = () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    };
+  
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+  
+    // Auto-slide every 3 seconds
+    setInterval(nextSlide, 20000);
+  </script>
+
+</body>
+</html>

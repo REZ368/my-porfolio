@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renz Kayle Ando - Web Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header/Navigation -->
+    <header class="bg-gray-800 p-4">
+        <nav class="container mx-auto flex flex-wrap justify-between items-center px-2 sm:px-4">
+            <div class="flex items-center mb-2 sm:mb-0">
+                <img src="image/1.png" alt="Logo" class="w-10 h-10 rounded-full mr-2" />
+                <span class="text-base sm:text-lg font-bold">ANDO, RENZ KAYLE N.</span>
+            </div>
+            <!-- Hamburger for mobile -->
+            <button id="mobile-menu-btn" class="sm:hidden text-white focus:outline-none text-2xl" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Desktop Nav -->
+            <ul class="hidden sm:flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-sm sm:text-base items-center">
+                <li><a href="#home" class="hover:text-blue-400">HOME</a></li>
+                <li><a href="#about" class="hover:text-blue-400">ABOUT</a></li>
+                <li><a href="#projects" class="hover:text-blue-400">PROJECTS</a></li>
+                <li><a href="#contacts" class="hover:text-blue-400">CONTACTS</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="sm:hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-50 flex flex-col items-center justify-center text-xl font-bold text-white hidden transition-all duration-300">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-3xl" aria-label="Close Menu"><i class="fas fa-times"></i></button>
+            <div class="flex flex-col items-center justify-center space-y-8 w-full mt-12">
+                <a href="#home" class="hover:text-blue-400 w-full text-center" onclick="closeMobileMenu()">HOME</a>
+                <a href="#about" class="hover:text-blue-400 w-full text-center" onclick="closeMobileMenu()">ABOUT</a>
+                <a href="#projects" class="hover:text-blue-400 w-full text-center" onclick="closeMobileMenu()">PROJECTS</a>
+                <a href="#contacts" class="hover:text-blue-400 w-full text-center" onclick="closeMobileMenu()">CONTACTS</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="container mx-auto py-10 px-4 sm:px-8 flex flex-col lg:flex-row items-center justify-between">
+        <div class="lg:w-1/2 mb-10 lg:mb-0 flex">
+            <div class="flex flex-col space-y-4 pr-8">
+                <a href="https://github.com/REZ368" class="bg-gray-700 p-3 rounded-full hover:bg-gray-600"><i class="fab fa-github text-white text-2xl"></i></a>
+                <a href="https://drive.google.com/file/d/1_M_k3smEyPSNSsScvWRQYj_-TPPoSvl0/view?usp=sharing" target="_blank" class="bg-gray-700 p-3 rounded-full hover:bg-gray-600"><i class="fas fa-file-alt text-white text-2xl"></i></a>
+                <a href="https://www.linkedin.com/in/renz-kayle-ando-49992a370/?trk=opento_sprofile_topcard" class="bg-gray-700 p-3 rounded-full hover:bg-gray-600"><i class="fab fa-linkedin-in text-white text-2xl"></i></a>
+                <a href="index.html" class="bg-gray-700 p-3 rounded-full hover:bg-gray-600"><i class="fab fa-instagram text-white text-2xl"></i></a>
+            </div>
+            <div class="flex-grow text-center">
+                <h1 class="text-4xl sm:text-5xl font-bold mb-4">HEY, I'M <br> RENZ KAYLE ANDO</h1>
+                <p class="text-base sm:text-lg mb-8">A web developer who builds and develops websites and web applications, ensuring both the user interface and database functions work as intended</p>
+                <button
+                   onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg"> PROJECTS 
+                </button>
+            </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center lg:justify-end">
+            <img src="image/ego.png" alt="Placeholder Image" class="rounded-lg w-full max-w-xs sm:max-w-sm lg:max-w-full h-auto">
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="container mx-auto min-h-screen py-10 px-4 sm:py-20 sm:px-8 md:py-32 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">ABOUT ME</h2>
+        <p class="text-base sm:text-lg mb-10">This page shares more about me, what I do, and the skills I have, especially in programming and coding.</p>
+        <div class="flex flex-col lg:flex-row justify-center items-start lg:space-x-10 w-full">
+            <div class="lg:w-1/2 text-left mb-10 lg:mb-0">
+                <h3 class="text-xl sm:text-2xl font-bold mb-4">Get to know me!</h3>
+                <p class="mb-4 text-base sm:text-xl leading-relaxed">I'm a Web Developer who creates programs, websites, and web applications, focusing on quality, performance, and smooth implementation.</p>
+                <p class="mb-4 text-base sm:text-xl leading-relaxed">On my On-the-Job Training (OJT) at DepEd LLC, I was assigned to develop a full-stack inventory system called SAED for the DepEd supply office (In development).</p>
+                <p class="mb-4 text-base sm:text-xl leading-relaxed">I'm open to job opportunities where I can contribute, grow, and continue learning. If you have a role that aligns with my skills and experience, feel free to reach out!</p>
+            </div>
+            <div class="lg:w-1/2 text-left">
+                <h3 class="text-xl sm:text-2xl font-bold mb-4">My Skills</h3>
+                <div class="flex flex-wrap gap-4">
+                    <span class="bg-gray-700 px-4 py-2 rounded-lg">HTML</span>
+                    <span class="bg-gray-700 px-4 py-2 rounded-lg">CSS</span>
+                    <span class="bg-gray-700 px-4 py-2 rounded-lg">TAILWIND CSS</span>
+                    <span class="bg-gray-700 px-4 py-2 rounded-lg">JAVACRIPT</span>
+                    <span class="bg-gray-700 px-4 py-2 rounded-lg">JAVA</span>
+                    <span class="bg-gray-700 px-4 py-2 rounded-lg">PHP</span>
+                    <span class="bg-gray-700 px-4 py-2 rounded-lg">MYSQL</span>
+                    <span class="bg-gray-700 px-4 py-2 rounded-lg">LARAVEL</span>
+                    <span class="bg-gray-700 px-4 py-2 rounded-lg">NODEJS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Projects Section -->
+    <section id="projects" class="container mx-auto py-10 px-4 sm:px-8 text-center">
+        <h2 class="text-4xl font-bold mb-4">PROJECTS</h2>
+        <p class="text-lg mb-10">Here you will find some of the personal and client projects that I created, developed, and maintained.</p>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-8 md:gap-10">
+            <!-- Project 1 -->
+            <div class="bg-gray-800 p-4 sm:p-6 rounded-lg flex flex-col md:flex-row items-center w-full max-w-2xl mx-auto overflow-hidden">
+                <img src="image/11.png" alt="Project Image" class="rounded-lg mb-4 md:mb-0 md:mr-6 w-full md:w-80 h-auto object-cover">
+                <div class="flex-1 flex flex-col justify-center text-left items-center md:items-start">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2">SUROY-TA!</h3>
+                    <p class="text-base sm:text-lg text-gray-400 mb-4">Travel Blog CAPSTONE project.</p>
+                    <div class="flex flex-row gap-4 w-full md:w-auto justify-center md:justify-start">
+                        <button
+                            onclick="window.location.href='#projects'"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg">
+                            FILE
+                        </button>
+                        <button
+                            onclick="window.location.href='projects/suroy-ta.html'"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg">
+                            VIEW
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="bg-gray-800 p-4 sm:p-6 rounded-lg flex flex-col md:flex-row items-center w-full max-w-2xl mx-auto overflow-hidden">
+                <img src="image/fs1.png" alt="Project Image" class="rounded-lg mb-4 md:mb-0 md:mr-6 w-full md:w-80 h-auto object-cover">
+                <div class="flex-1 flex flex-col justify-center text-left items-center md:items-start">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2">FSIS</h3>
+                    <p class="text-base sm:text-lg text-gray-400 mb-4">Fruit Stock Inventory System TESDA project.</p>
+                    <div class="flex flex-row gap-4 w-full md:w-auto justify-center md:justify-start">
+                        <button
+                            onclick="window.location.href='#projects'"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg">
+                            FILE
+                        </button>
+                        <button
+                            onclick="window.location.href='projects/fsis.html'"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg">
+                            VIEW
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="bg-gray-800 p-4 sm:p-6 rounded-lg flex flex-col md:flex-row items-center w-full max-w-2xl mx-auto overflow-hidden">
+                <img src="image/sed1.png" alt="Project Image" class="rounded-lg mb-4 md:mb-0 md:mr-6 w-full md:w-80 h-auto object-cover">
+                <div class="flex-1 flex flex-col justify-center text-left items-center md:items-start">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2">SAED</h3>
+                    <p class="text-base sm:text-lg text-gray-400 mb-4">System Analytics and Evaluation Development OJT project.</p>
+                    <div class="flex flex-row gap-4 w-full md:w-auto justify-center md:justify-start">
+                        <button
+                            onclick="window.location.href='#projects'"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg">
+                            FILE
+                        </button>
+                        <button
+                            onclick="window.location.href='projects/saed.html'"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg">
+                            VIEW
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="container mx-auto py-10 px-4 sm:py-20 sm:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">CONTACTS</h2>
+        <p class="text-base sm:text-lg mb-10">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible</p>
+        <!-- Formspree Form -->
+        <form id="my-form" action="https://formspree.io/f/xyzjnbqd" method="POST" class="max-w-xl w-full mx-auto bg-gray-800 p-4 sm:p-8 rounded-lg">
+          <div class="mb-4 text-left">
+            <label for="email" class="block text-white text-sm font-bold mb-2">Email:</label>
+            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600" placeholder="Enter Your Email" required />
+          </div>
+          <div class="mb-6 text-left">
+            <label for="message" class="block text-white text-sm font-bold mb-2">Message:</label>
+            <textarea id="message" name="message" rows="10" maxlength="2500" class="shadow appearance-none border rounded w-full py-3 px-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-gray-700 border-gray-600 resize-none" placeholder="Enter Your Message (max 500 words)" required></textarea>
+            <div class="text-sm text-gray-400 mt-1">
+              <span id="word-count">0</span>/500 words
+            </div>
+          </div>
+          <button id="my-form-button" type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg w-full sm:w-auto">Submit</button>
+          <p id="my-form-status" class="mt-4"></p>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-10 px-4 sm:px-8">
+        <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center text-center lg:text-left">
+            <div class="mb-6 lg:mb-0">
+                <h3 class="text-xl sm:text-2xl font-bold mb-2">RENZ KAYLE ANDO</h3>
+                <p class="text-sm sm:text-base text-gray-400">A Web Developer focused on transforming original ideas into successful, user-centered web solutions.</p>
+            </div>
+            <div>
+                <h3 class="text-xl sm:text-2xl font-bold mb-4">SOCIAL</h3>
+                <div class="flex space-x-4 justify-center lg:justify-start">
+                    <a href="https://github.com/REZ368" class="text-white hover:text-blue-400"><i class="fab fa-github text-2xl"></i></a>
+                    <a href="#contact" class="text-white hover:text-blue-400"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="https://www.linkedin.com/in/renz-kayle-ando-49992a370/?trk=opento_sprofile_topcard" class="text-white hover:text-blue-400"><i class="fab fa-linkedin-in text-2xl"></i></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+            &copy; Copyright 2025. Made by Renz Kayle Ando
+        </div>
+    </footer>
+<script src="index.js"></script>
+<script>
+// Hamburger menu toggle for mobile
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeBtn = document.getElementById('close-mobile-menu');
+function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    document.body.style.overflow = '';
+}
+if (menuBtn && mobileMenu && closeBtn) {
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+    closeBtn.addEventListener('click', closeMobileMenu);
+    // Optional: close menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+}
+
+var form = document.getElementById("my-form");
+async function handleSubmit(event) {
+  event.preventDefault();
+  var status = document.getElementById("my-form-status");
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      status.innerHTML = "Thanks for your submission!";
+      form.reset()
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+        } else {
+          status.innerHTML = "Oops! There was a problem submitting your form"
+        }
+      })
+    }
+  }).catch(error => {
+    status.innerHTML = "Oops! There was a problem submitting your form"
+  });
+}
+form.addEventListener("submit", handleSubmit)
+
+// Word counter for message textarea
+const messageTextarea = document.getElementById('message');
+const wordCountSpan = document.getElementById('word-count');
+
+function updateWordCount() {
+  const text = messageTextarea.value;
+  const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+  wordCountSpan.textContent = words;
+  
+  // Change color when approaching limit
+  if (words > 450) {
+    wordCountSpan.className = 'text-red-400';
+  } else if (words > 400) {
+    wordCountSpan.className = 'text-yellow-400';
+  } else {
+    wordCountSpan.className = 'text-gray-400';
+  }
+}
+
+messageTextarea.addEventListener('input', updateWordCount);
+</script>
+</body>
+</html> 

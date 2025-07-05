@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>☁️CAGE</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body class="bg-gray-800">
+
+  <!-- Image Gallery -->
+  <div class="flex justify-center w-full p-6 bg-gray-900">
+    <div class="relative w-full max-w-screen-xl mx-auto overflow-hidden">
+      <div id="slider" class="flex transition-transform duration-700">
+        <img src="cc.png" class="w-full flex-shrink-0 object-cover max-w-full max-h-[800px] md:max-h-[600px] lg:max-h-[500px] xl:max-h-[1080px]" style="aspect-ratio:16/9;" alt="Image 1">
+
+      </div>
+      <!-- Left Button -->
+      <button id="prevBtn" class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white-80 hover:bg-gray-100 p-2 rounded-full shadow-md z-10">
+        &#8592;
+      </button>
+      <!-- Right Button -->
+      <button id="nextBtn" class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white-80 hover:bg-gray-100 p-2 rounded-full shadow-md z-10">
+        &#8594;
+      </button>
+    </div>
+  </div>
+
+  <!-- Text Content -->
+  <div class="bg-white text-gray-800 p-6 sm:p-8 rounded-b-lg shadow-md max-w-5xl mx-auto mt-4">
+    <h3 class="text-2xl font-bold mb-4">☁️CAGE (cloud: Code Apps Git Engine)</h3>
+    <p class="mb-4">
+        Is an open-source platform (not for selling) designed to run and manage Website Applications and Mobile Applications using full-stack technologies including PWA support, frontend/backend integration, and database connectivity.
+    </p>
+    <p class="mb-4">
+      <strong>Technologies used:</strong> HTML, TAILWINDCSS, NODEJS, MYSQL 
+    </p>
+    <p class="mb-4">
+      <strong>Users:</strong><br>
+      <strong>Web Application Section:</strong>Can browse/open any newest posted web application link.<br>
+      <strong>Mobile Application:</strong>Can browse/download any newest posted mobile application link..<br>
+      <strong>Contact:</strong>Can suggest/feedback message...<br>
+      <strong>QR code:</strong>Donate to support the developer....
+
+
+    </p>
+    <p>
+        ☁️CAGE is not a store. It’s a freedom-to-use platform offering experimental ideas and free-to-use tools created by the developer — whether for full-stack web applications or mobile applications (PWAs).
+
+.
+    </p>
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+    const slides = slider.querySelectorAll('img');
+    const totalSlides = slides.length;
+    let index = 0;
+  
+    const updateSlide = () => {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    };
+  
+    const nextSlide = () => {
+      index = (index + 1) % totalSlides;
+      updateSlide();
+    };
+  
+    const prevSlide = () => {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    };
+  
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+  
+    // Auto-slide every 3 seconds
+    setInterval(nextSlide, 20000);
+  </script>
+
+</body>
+</html>
